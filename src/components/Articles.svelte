@@ -8,7 +8,7 @@ let articles = []
 
 onMount(async() => {
   try {
-    const url = 'http://newsapi.org/v2/top-headlines?' + 'country=fr&' + 'apiKey=3630625b62f5421c8be89cf447cae18b&' + 'pageSize=3&page=1';
+    const url = 'https://newsapi.org/v2/top-headlines?' + 'country=fr&' + 'apiKey=3630625b62f5421c8be89cf447cae18b&' + 'pageSize=3&page=1';
     const response = await fetch(url)
     const data = await response.json()
     articles = data.articles
