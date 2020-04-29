@@ -19,6 +19,13 @@ onMount(async() => {
 
 Moment.locale('fr')
 
+const formatTitle = title => {
+  const titleSplit = title.split('-')
+  let formatTitle = ""
+  for(let i = 0; i < titleSplit.length - 1; i++) formatTitle += titleSplit[i]
+  return formatTitle
+}
+
 const formatData = date => {
   return Moment(date)
   .fromNow()
@@ -32,7 +39,7 @@ const formatData = date => {
     <a href={item.url} target="blank">
       <div class="a-content">
         <span>{item.source.name}</span>
-        <h6>{item.title}</h6>
+        <h6>{ formatTitle(item.title) }</h6>
         <span>{ formatData(item.publishedAt) }</span>
       </div>
       <figure>
